@@ -11,7 +11,46 @@
 		4320C74C268EF15900AEF27B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C74B268EF15900AEF27B /* ContentView.swift */; };
 		4320C74E268EF15A00AEF27B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4320C74D268EF15A00AEF27B /* Assets.xcassets */; };
 		4320C751268EF15A00AEF27B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4320C750268EF15A00AEF27B /* Preview Assets.xcassets */; };
+		4320C75F268EF2AA00AEF27B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4320C75E268EF2AA00AEF27B /* WidgetKit.framework */; };
+		4320C761268EF2AA00AEF27B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4320C760268EF2AA00AEF27B /* SwiftUI.framework */; };
+		4320C764268EF2AA00AEF27B /* GpAttendanceWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C763268EF2AA00AEF27B /* GpAttendanceWidget.swift */; };
+		4320C767268EF2AB00AEF27B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4320C766268EF2AB00AEF27B /* Assets.xcassets */; };
+		4320C769268EF2AB00AEF27B /* GpAttendanceWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4320C765268EF2AA00AEF27B /* GpAttendanceWidget.intentdefinition */; };
+		4320C76A268EF2AB00AEF27B /* GpAttendanceWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 4320C765268EF2AA00AEF27B /* GpAttendanceWidget.intentdefinition */; };
+		4320C76D268EF2AB00AEF27B /* GpAttendanceWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4320C75C268EF2AA00AEF27B /* GpAttendanceWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4320C773268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C772268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift */; };
+		4320C777268EFAB700AEF27B /* UserDefaultStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C776268EFAB700AEF27B /* UserDefaultStore.swift */; };
+		4320C778268F01FF00AEF27B /* UserDefaultStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C776268EFAB700AEF27B /* UserDefaultStore.swift */; };
+		4320C779268F020300AEF27B /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C772268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift */; };
+		4320C77B268F095C00AEF27B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77A268F095C00AEF27B /* SettingView.swift */; };
+		4320C77D268F114400AEF27B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77C268F114400AEF27B /* AppState.swift */; };
+		4320C77F268F13EB00AEF27B /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77E268F13EB00AEF27B /* Calendar+.swift */; };
+		4320C780268F157800AEF27B /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77E268F13EB00AEF27B /* Calendar+.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4320C76B268EF2AB00AEF27B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4320C73E268EF15900AEF27B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4320C75B268EF2AA00AEF27B;
+			remoteInfo = GpAttendanceWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4320C771268EF2AB00AEF27B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4320C76D268EF2AB00AEF27B /* GpAttendanceWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4320C746268EF15900AEF27B /* GpAttendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GpAttendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +59,20 @@
 		4320C74D268EF15A00AEF27B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4320C750268EF15A00AEF27B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4320C752268EF15A00AEF27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4320C75C268EF2AA00AEF27B /* GpAttendanceWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GpAttendanceWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4320C75E268EF2AA00AEF27B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		4320C760268EF2AA00AEF27B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		4320C763268EF2AA00AEF27B /* GpAttendanceWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpAttendanceWidget.swift; sourceTree = "<group>"; };
+		4320C765268EF2AA00AEF27B /* GpAttendanceWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = GpAttendanceWidget.intentdefinition; sourceTree = "<group>"; };
+		4320C766268EF2AB00AEF27B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4320C768268EF2AB00AEF27B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4320C772268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+PropertyWrapper.swift"; sourceTree = "<group>"; };
+		4320C774268EF33700AEF27B /* GpAttendance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GpAttendance.entitlements; sourceTree = "<group>"; };
+		4320C775268EF36D00AEF27B /* GpAttendanceWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GpAttendanceWidgetExtension.entitlements; sourceTree = "<group>"; };
+		4320C776268EFAB700AEF27B /* UserDefaultStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStore.swift; sourceTree = "<group>"; };
+		4320C77A268F095C00AEF27B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		4320C77C268F114400AEF27B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		4320C77E268F13EB00AEF27B /* Calendar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,13 +83,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4320C759268EF2AA00AEF27B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4320C761268EF2AA00AEF27B /* SwiftUI.framework in Frameworks */,
+				4320C75F268EF2AA00AEF27B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4320C73D268EF15900AEF27B = {
 			isa = PBXGroup;
 			children = (
+				4320C775268EF36D00AEF27B /* GpAttendanceWidgetExtension.entitlements */,
 				4320C748268EF15900AEF27B /* GpAttendance */,
+				4320C762268EF2AA00AEF27B /* GpAttendanceWidget */,
+				4320C75D268EF2AA00AEF27B /* Frameworks */,
 				4320C747268EF15900AEF27B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4320C746268EF15900AEF27B /* GpAttendance.app */,
+				4320C75C268EF2AA00AEF27B /* GpAttendanceWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,11 +118,17 @@
 		4320C748268EF15900AEF27B /* GpAttendance */ = {
 			isa = PBXGroup;
 			children = (
+				4320C774268EF33700AEF27B /* GpAttendance.entitlements */,
 				4320C749268EF15900AEF27B /* GpAttendanceApp.swift */,
 				4320C74B268EF15900AEF27B /* ContentView.swift */,
 				4320C74D268EF15A00AEF27B /* Assets.xcassets */,
 				4320C752268EF15A00AEF27B /* Info.plist */,
 				4320C74F268EF15A00AEF27B /* Preview Content */,
+				4320C772268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift */,
+				4320C776268EFAB700AEF27B /* UserDefaultStore.swift */,
+				4320C77A268F095C00AEF27B /* SettingView.swift */,
+				4320C77C268F114400AEF27B /* AppState.swift */,
+				4320C77E268F13EB00AEF27B /* Calendar+.swift */,
 			);
 			path = GpAttendance;
 			sourceTree = "<group>";
@@ -69,6 +141,26 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4320C75D268EF2AA00AEF27B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4320C75E268EF2AA00AEF27B /* WidgetKit.framework */,
+				4320C760268EF2AA00AEF27B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4320C762268EF2AA00AEF27B /* GpAttendanceWidget */ = {
+			isa = PBXGroup;
+			children = (
+				4320C763268EF2AA00AEF27B /* GpAttendanceWidget.swift */,
+				4320C765268EF2AA00AEF27B /* GpAttendanceWidget.intentdefinition */,
+				4320C766268EF2AB00AEF27B /* Assets.xcassets */,
+				4320C768268EF2AB00AEF27B /* Info.plist */,
+			);
+			path = GpAttendanceWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,15 +171,34 @@
 				4320C742268EF15900AEF27B /* Sources */,
 				4320C743268EF15900AEF27B /* Frameworks */,
 				4320C744268EF15900AEF27B /* Resources */,
+				4320C771268EF2AB00AEF27B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4320C76C268EF2AB00AEF27B /* PBXTargetDependency */,
 			);
 			name = GpAttendance;
 			productName = GpAttendance;
 			productReference = 4320C746268EF15900AEF27B /* GpAttendance.app */;
 			productType = "com.apple.product-type.application";
+		};
+		4320C75B268EF2AA00AEF27B /* GpAttendanceWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4320C76E268EF2AB00AEF27B /* Build configuration list for PBXNativeTarget "GpAttendanceWidgetExtension" */;
+			buildPhases = (
+				4320C758268EF2AA00AEF27B /* Sources */,
+				4320C759268EF2AA00AEF27B /* Frameworks */,
+				4320C75A268EF2AA00AEF27B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GpAttendanceWidgetExtension;
+			productName = GpAttendanceWidgetExtension;
+			productReference = 4320C75C268EF2AA00AEF27B /* GpAttendanceWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -99,6 +210,9 @@
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					4320C745268EF15900AEF27B = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					4320C75B268EF2AA00AEF27B = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
@@ -117,6 +231,7 @@
 			projectRoot = "";
 			targets = (
 				4320C745268EF15900AEF27B /* GpAttendance */,
+				4320C75B268EF2AA00AEF27B /* GpAttendanceWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +246,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4320C75A268EF2AA00AEF27B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4320C767268EF2AB00AEF27B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,12 +261,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4320C773268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift in Sources */,
+				4320C777268EFAB700AEF27B /* UserDefaultStore.swift in Sources */,
+				4320C77D268F114400AEF27B /* AppState.swift in Sources */,
+				4320C76A268EF2AB00AEF27B /* GpAttendanceWidget.intentdefinition in Sources */,
+				4320C77B268F095C00AEF27B /* SettingView.swift in Sources */,
 				4320C74C268EF15900AEF27B /* ContentView.swift in Sources */,
 				4320C74A268EF15900AEF27B /* GpAttendanceApp.swift in Sources */,
+				4320C77F268F13EB00AEF27B /* Calendar+.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4320C758268EF2AA00AEF27B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4320C780268F157800AEF27B /* Calendar+.swift in Sources */,
+				4320C769268EF2AB00AEF27B /* GpAttendanceWidget.intentdefinition in Sources */,
+				4320C779268F020300AEF27B /* UserDefaults+PropertyWrapper.swift in Sources */,
+				4320C778268F01FF00AEF27B /* UserDefaultStore.swift in Sources */,
+				4320C764268EF2AA00AEF27B /* GpAttendanceWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4320C76C268EF2AB00AEF27B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4320C75B268EF2AA00AEF27B /* GpAttendanceWidgetExtension */;
+			targetProxy = 4320C76B268EF2AB00AEF27B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4320C753268EF15A00AEF27B /* Debug */ = {
@@ -265,8 +414,10 @@
 		4320C756268EF15A00AEF27B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GpAttendance/GpAttendance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GpAttendance/Preview Content\"";
 				DEVELOPMENT_TEAM = B4S4333JDW;
@@ -287,8 +438,10 @@
 		4320C757268EF15A00AEF27B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GpAttendance/GpAttendance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GpAttendance/Preview Content\"";
 				DEVELOPMENT_TEAM = B4S4333JDW;
@@ -301,6 +454,50 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.touyou.GpAttendance;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4320C76F268EF2AB00AEF27B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GpAttendanceWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4S4333JDW;
+				INFOPLIST_FILE = GpAttendanceWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.touyou.GpAttendance.GpAttendanceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4320C770268EF2AB00AEF27B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GpAttendanceWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4S4333JDW;
+				INFOPLIST_FILE = GpAttendanceWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.touyou.GpAttendance.GpAttendanceWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -323,6 +520,15 @@
 			buildConfigurations = (
 				4320C756268EF15A00AEF27B /* Debug */,
 				4320C757268EF15A00AEF27B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4320C76E268EF2AB00AEF27B /* Build configuration list for PBXNativeTarget "GpAttendanceWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4320C76F268EF2AB00AEF27B /* Debug */,
+				4320C770268EF2AB00AEF27B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
