@@ -44,11 +44,13 @@ struct ContentView: View {
                         Spacer()
                         Button("退社 🏠") {
                             URLSession.shared.dataTask(with: appState.leaveUrl!) { _, _, error in
-                                if let error = error {
-                                    showingAlert = AlertItem(alert: Alert(title: Text("エラー"), message: Text(error.localizedDescription)))
-                                } else {
-                                    appState.toggleArrived()
-                                    showingAlert = AlertItem(alert: Alert(title: Text("退社しました！おつかれさま！")))
+                                DispatchQueue.main.async {
+                                    if let error = error {
+                                        showingAlert = AlertItem(alert: Alert(title: Text("エラー"), message: Text(error.localizedDescription)))
+                                    } else {
+                                        appState.toggleArrived()
+                                        showingAlert = AlertItem(alert: Alert(title: Text("退社しました！おつかれさま！")))
+                                    }
                                 }
                             }.resume()
                         }
@@ -66,12 +68,14 @@ struct ContentView: View {
                         Spacer()
                         Button("出社 🏢") {
                             URLSession.shared.dataTask(with: appState.arriveUrl!) { _, _, error  in
-                                if let error = error {
-                                    showingAlert = AlertItem(alert: Alert(title: Text("エラー"), message: Text(error.localizedDescription)))
-                                } else {
-                                    appState.toggleArrived()
-                                    appState.setArriveDate(Date())
-                                    showingAlert = AlertItem(alert: Alert(title: Text("出社しました！ファイト！")))
+                                DispatchQueue.main.async {
+                                    if let error = error {
+                                        showingAlert = AlertItem(alert: Alert(title: Text("エラー"), message: Text(error.localizedDescription)))
+                                    } else {
+                                        appState.toggleArrived()
+                                        appState.setArriveDate(Date())
+                                        showingAlert = AlertItem(alert: Alert(title: Text("出社しました！ファイト！")))
+                                    }
                                 }
                             }.resume()
                         }

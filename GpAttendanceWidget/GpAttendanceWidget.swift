@@ -44,9 +44,8 @@ struct GpAttendanceWidgetEntryView : View {
     var body: some View {
         if entry.isSetUrls {
             if entry.isArrived {
-                HStack {
+                VStack {
                     Text("🏢 出社中だよ〜")
-                    Spacer()
                     Text(Calendar.shared.getDurationText(from: entry.arriveDate!))
                 }
             } else {
