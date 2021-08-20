@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-class AppState: ObservableObject {
+final class AppState: ObservableObject {
+    private let watchConnector = WatchConnector.shared
     private var defaultStore = UserDefaultStore()
 
     @Published var arriveUrl: URL?
@@ -25,20 +26,33 @@ class AppState: ObservableObject {
     func setArriveUrl(_ url: URL?) {
         defaultStore.arriveUrl = url
         arriveUrl = url
+        watchConnector.sendMessage(toDict())
     }
 
     func setLeaveUrl(_ url: URL?) {
         defaultStore.leaveUrl = url
         leaveUrl = url
+        watchConnector.sendMessage(toDict())
     }
 
     func toggleArrived() {
         isArrived.toggle()
         defaultStore.isArrived = isArrived
+        watchConnector.sendMessage(toDict())
     }
 
     func setArriveDate(_ date: Date?) {
         defaultStore.arriveDate = date
         arriveDate = date
+        watchConnector.sendMessage(toDict())
+    }
+
+    func toDict() -> [String: Any] {
+        return [
+            "arriveUrl": arriveUrl ?? "",
+            "leaveUrl": leaveUrl ?? "",
+            "isArrived": isArrived,
+            "arriveDate": arriveDate ?? ""
+        ]
     }
 }

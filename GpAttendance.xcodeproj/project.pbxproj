@@ -30,6 +30,19 @@
 		438C1A4526CF9A0900DB20AD /* WorkingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A4426CF9A0900DB20AD /* WorkingTimeView.swift */; };
 		438C1A4926CF9A7C00DB20AD /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A4826CF9A7C00DB20AD /* AlertItem.swift */; };
 		438C1A4B26CF9B4300DB20AD /* HomeTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A4A26CF9B4300DB20AD /* HomeTimeView.swift */; };
+		438C1A5126CF9EEB00DB20AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438C1A5026CF9EEB00DB20AD /* Assets.xcassets */; };
+		438C1A5826CF9EEC00DB20AD /* GpAttendanceWatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 438C1A5726CF9EEC00DB20AD /* GpAttendanceWatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		438C1A5D26CF9EEC00DB20AD /* GpAttendanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A5C26CF9EEC00DB20AD /* GpAttendanceApp.swift */; };
+		438C1A5F26CF9EEC00DB20AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A5E26CF9EEC00DB20AD /* ContentView.swift */; };
+		438C1A6126CF9EEC00DB20AD /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A6026CF9EEC00DB20AD /* NotificationController.swift */; };
+		438C1A6326CF9EEC00DB20AD /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A6226CF9EEC00DB20AD /* NotificationView.swift */; };
+		438C1A6526CF9EEC00DB20AD /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A6426CF9EEC00DB20AD /* ComplicationController.swift */; };
+		438C1A6726CF9EEE00DB20AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438C1A6626CF9EEE00DB20AD /* Assets.xcassets */; };
+		438C1A6A26CF9EEE00DB20AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438C1A6926CF9EEE00DB20AD /* Preview Assets.xcassets */; };
+		438C1A6F26CF9EEE00DB20AD /* GpAttendanceWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 438C1A4E26CF9EE700DB20AD /* GpAttendanceWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		438C1A7B26CFA0FD00DB20AD /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C772268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift */; };
+		438C1A7C26CFA10200DB20AD /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77E268F13EB00AEF27B /* Calendar+.swift */; };
+		438C1A7F26CFA63B00DB20AD /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A7E26CFA63B00DB20AD /* WatchConnector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +52,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4320C75B268EF2AA00AEF27B;
 			remoteInfo = GpAttendanceWidgetExtension;
+		};
+		438C1A5926CF9EEC00DB20AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4320C73E268EF15900AEF27B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 438C1A5626CF9EEC00DB20AD;
+			remoteInfo = "GpAttendanceWatchApp Extension";
+		};
+		438C1A6D26CF9EEE00DB20AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4320C73E268EF15900AEF27B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 438C1A4D26CF9EE700DB20AD;
+			remoteInfo = GpAttendanceWatchApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -52,6 +79,28 @@
 				4320C76D268EF2AB00AEF27B /* GpAttendanceWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		438C1A7326CF9EEE00DB20AD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				438C1A5826CF9EEC00DB20AD /* GpAttendanceWatchApp Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		438C1A7726CF9EEE00DB20AD /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				438C1A6F26CF9EEE00DB20AD /* GpAttendanceWatchApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -81,6 +130,22 @@
 		438C1A4426CF9A0900DB20AD /* WorkingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingTimeView.swift; sourceTree = "<group>"; };
 		438C1A4826CF9A7C00DB20AD /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		438C1A4A26CF9B4300DB20AD /* HomeTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimeView.swift; sourceTree = "<group>"; };
+		438C1A4E26CF9EE700DB20AD /* GpAttendanceWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GpAttendanceWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		438C1A5026CF9EEB00DB20AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		438C1A5226CF9EEB00DB20AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		438C1A5726CF9EEC00DB20AD /* GpAttendanceWatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GpAttendanceWatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		438C1A5C26CF9EEC00DB20AD /* GpAttendanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpAttendanceApp.swift; sourceTree = "<group>"; };
+		438C1A5E26CF9EEC00DB20AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		438C1A6026CF9EEC00DB20AD /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		438C1A6226CF9EEC00DB20AD /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		438C1A6426CF9EEC00DB20AD /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		438C1A6626CF9EEE00DB20AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		438C1A6926CF9EEE00DB20AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		438C1A6B26CF9EEE00DB20AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		438C1A6C26CF9EEE00DB20AD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		438C1A7826CF9F2800DB20AD /* GpAttendanceWatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GpAttendanceWatchApp.entitlements; sourceTree = "<group>"; };
+		438C1A7926CF9F4500DB20AD /* GpAttendanceWatchApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GpAttendanceWatchApp Extension.entitlements"; sourceTree = "<group>"; };
+		438C1A7E26CFA63B00DB20AD /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +165,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		438C1A5426CF9EEC00DB20AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -108,6 +180,8 @@
 			children = (
 				4320C748268EF15900AEF27B /* GpAttendance */,
 				4320C762268EF2AA00AEF27B /* GpAttendanceWidget */,
+				438C1A4F26CF9EE700DB20AD /* GpAttendanceWatchApp */,
+				438C1A5B26CF9EEC00DB20AD /* GpAttendanceWatchApp Extension */,
 				4320C75D268EF2AA00AEF27B /* Frameworks */,
 				4320C747268EF15900AEF27B /* Products */,
 			);
@@ -118,6 +192,8 @@
 			children = (
 				4320C746268EF15900AEF27B /* GpAttendance.app */,
 				4320C75C268EF2AA00AEF27B /* GpAttendanceWidgetExtension.appex */,
+				438C1A4E26CF9EE700DB20AD /* GpAttendanceWatchApp.app */,
+				438C1A5726CF9EEC00DB20AD /* GpAttendanceWatchApp Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +298,7 @@
 			children = (
 				4320C776268EFAB700AEF27B /* UserDefaultStore.swift */,
 				4320C77C268F114400AEF27B /* AppState.swift */,
+				438C1A7E26CFA63B00DB20AD /* WatchConnector.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -277,6 +354,41 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		438C1A4F26CF9EE700DB20AD /* GpAttendanceWatchApp */ = {
+			isa = PBXGroup;
+			children = (
+				438C1A7826CF9F2800DB20AD /* GpAttendanceWatchApp.entitlements */,
+				438C1A5026CF9EEB00DB20AD /* Assets.xcassets */,
+				438C1A5226CF9EEB00DB20AD /* Info.plist */,
+			);
+			path = GpAttendanceWatchApp;
+			sourceTree = "<group>";
+		};
+		438C1A5B26CF9EEC00DB20AD /* GpAttendanceWatchApp Extension */ = {
+			isa = PBXGroup;
+			children = (
+				438C1A7926CF9F4500DB20AD /* GpAttendanceWatchApp Extension.entitlements */,
+				438C1A5C26CF9EEC00DB20AD /* GpAttendanceApp.swift */,
+				438C1A5E26CF9EEC00DB20AD /* ContentView.swift */,
+				438C1A6026CF9EEC00DB20AD /* NotificationController.swift */,
+				438C1A6226CF9EEC00DB20AD /* NotificationView.swift */,
+				438C1A6426CF9EEC00DB20AD /* ComplicationController.swift */,
+				438C1A6626CF9EEE00DB20AD /* Assets.xcassets */,
+				438C1A6B26CF9EEE00DB20AD /* Info.plist */,
+				438C1A6C26CF9EEE00DB20AD /* PushNotificationPayload.apns */,
+				438C1A6826CF9EEE00DB20AD /* Preview Content */,
+			);
+			path = "GpAttendanceWatchApp Extension";
+			sourceTree = "<group>";
+		};
+		438C1A6826CF9EEE00DB20AD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				438C1A6926CF9EEE00DB20AD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,11 +400,13 @@
 				4320C743268EF15900AEF27B /* Frameworks */,
 				4320C744268EF15900AEF27B /* Resources */,
 				4320C771268EF2AB00AEF27B /* Embed App Extensions */,
+				438C1A7726CF9EEE00DB20AD /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				4320C76C268EF2AB00AEF27B /* PBXTargetDependency */,
+				438C1A6E26CF9EEE00DB20AD /* PBXTargetDependency */,
 			);
 			name = GpAttendance;
 			productName = GpAttendance;
@@ -316,6 +430,40 @@
 			productReference = 4320C75C268EF2AA00AEF27B /* GpAttendanceWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		438C1A4D26CF9EE700DB20AD /* GpAttendanceWatchApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 438C1A7426CF9EEE00DB20AD /* Build configuration list for PBXNativeTarget "GpAttendanceWatchApp" */;
+			buildPhases = (
+				438C1A4C26CF9EE700DB20AD /* Resources */,
+				438C1A7326CF9EEE00DB20AD /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				438C1A5A26CF9EEC00DB20AD /* PBXTargetDependency */,
+			);
+			name = GpAttendanceWatchApp;
+			productName = GpAttendanceWatchApp;
+			productReference = 438C1A4E26CF9EE700DB20AD /* GpAttendanceWatchApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		438C1A5626CF9EEC00DB20AD /* GpAttendanceWatchApp Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 438C1A7026CF9EEE00DB20AD /* Build configuration list for PBXNativeTarget "GpAttendanceWatchApp Extension" */;
+			buildPhases = (
+				438C1A5326CF9EEC00DB20AD /* Sources */,
+				438C1A5426CF9EEC00DB20AD /* Frameworks */,
+				438C1A5526CF9EEC00DB20AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GpAttendanceWatchApp Extension";
+			productName = "GpAttendanceWatchApp Extension";
+			productReference = 438C1A5726CF9EEC00DB20AD /* GpAttendanceWatchApp Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -329,6 +477,12 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					4320C75B268EF2AA00AEF27B = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					438C1A4D26CF9EE700DB20AD = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					438C1A5626CF9EEC00DB20AD = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
 				};
@@ -348,6 +502,8 @@
 			targets = (
 				4320C745268EF15900AEF27B /* GpAttendance */,
 				4320C75B268EF2AA00AEF27B /* GpAttendanceWidgetExtension */,
+				438C1A4D26CF9EE700DB20AD /* GpAttendanceWatchApp */,
+				438C1A5626CF9EEC00DB20AD /* GpAttendanceWatchApp Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -370,6 +526,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		438C1A4C26CF9EE700DB20AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438C1A5126CF9EEB00DB20AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		438C1A5526CF9EEC00DB20AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438C1A6A26CF9EEE00DB20AD /* Preview Assets.xcassets in Resources */,
+				438C1A6726CF9EEE00DB20AD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -383,6 +556,7 @@
 				438C1A4326CF998C00DB20AD /* ShouldSetURLView.swift in Sources */,
 				4320C777268EFAB700AEF27B /* UserDefaultStore.swift in Sources */,
 				4320C77D268F114400AEF27B /* AppState.swift in Sources */,
+				438C1A7F26CFA63B00DB20AD /* WatchConnector.swift in Sources */,
 				4320C76A268EF2AB00AEF27B /* GpAttendanceWidget.intentdefinition in Sources */,
 				438C1A4526CF9A0900DB20AD /* WorkingTimeView.swift in Sources */,
 				4320C77B268F095C00AEF27B /* SettingView.swift in Sources */,
@@ -404,6 +578,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		438C1A5326CF9EEC00DB20AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				438C1A6126CF9EEC00DB20AD /* NotificationController.swift in Sources */,
+				438C1A7B26CFA0FD00DB20AD /* UserDefaults+PropertyWrapper.swift in Sources */,
+				438C1A5F26CF9EEC00DB20AD /* ContentView.swift in Sources */,
+				438C1A6526CF9EEC00DB20AD /* ComplicationController.swift in Sources */,
+				438C1A5D26CF9EEC00DB20AD /* GpAttendanceApp.swift in Sources */,
+				438C1A6326CF9EEC00DB20AD /* NotificationView.swift in Sources */,
+				438C1A7C26CFA10200DB20AD /* Calendar+.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -411,6 +599,16 @@
 			isa = PBXTargetDependency;
 			target = 4320C75B268EF2AA00AEF27B /* GpAttendanceWidgetExtension */;
 			targetProxy = 4320C76B268EF2AB00AEF27B /* PBXContainerItemProxy */;
+		};
+		438C1A5A26CF9EEC00DB20AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 438C1A5626CF9EEC00DB20AD /* GpAttendanceWatchApp Extension */;
+			targetProxy = 438C1A5926CF9EEC00DB20AD /* PBXContainerItemProxy */;
+		};
+		438C1A6E26CF9EEE00DB20AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 438C1A4D26CF9EE700DB20AD /* GpAttendanceWatchApp */;
+			targetProxy = 438C1A6D26CF9EEE00DB20AD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -623,6 +821,98 @@
 			};
 			name = Release;
 		};
+		438C1A7126CF9EEE00DB20AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "GpAttendanceWatchApp Extension/GpAttendanceWatchApp Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GpAttendanceWatchApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = B4S4333JDW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "GpAttendanceWatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.touyou.GpAttendance.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		438C1A7226CF9EEE00DB20AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "GpAttendanceWatchApp Extension/GpAttendanceWatchApp Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"GpAttendanceWatchApp Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = B4S4333JDW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "GpAttendanceWatchApp Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.touyou.GpAttendance.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		438C1A7526CF9EEE00DB20AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GpAttendanceWatchApp/GpAttendanceWatchApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4S4333JDW;
+				IBSC_MODULE = GpAttendanceWatchApp_Extension;
+				INFOPLIST_FILE = GpAttendanceWatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.touyou.GpAttendance.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		438C1A7626CF9EEE00DB20AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GpAttendanceWatchApp/GpAttendanceWatchApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4S4333JDW;
+				IBSC_MODULE = GpAttendanceWatchApp_Extension;
+				INFOPLIST_FILE = GpAttendanceWatchApp/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.touyou.GpAttendance.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -649,6 +939,24 @@
 			buildConfigurations = (
 				4320C76F268EF2AB00AEF27B /* Debug */,
 				4320C770268EF2AB00AEF27B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		438C1A7026CF9EEE00DB20AD /* Build configuration list for PBXNativeTarget "GpAttendanceWatchApp Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				438C1A7126CF9EEE00DB20AD /* Debug */,
+				438C1A7226CF9EEE00DB20AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		438C1A7426CF9EEE00DB20AD /* Build configuration list for PBXNativeTarget "GpAttendanceWatchApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				438C1A7526CF9EEE00DB20AD /* Debug */,
+				438C1A7626CF9EEE00DB20AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
