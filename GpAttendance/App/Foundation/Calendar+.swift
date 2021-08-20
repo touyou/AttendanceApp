@@ -15,13 +15,13 @@ extension Calendar {
         return calendar
     }()
 
-    func getDurationText(from startDate: Date) -> String {
+    func getDurationText(from startDate: Date, to targetDate: Date) -> String {
         let formatter = DateComponentsFormatter()
         formatter.calendar = Calendar.shared
         formatter.unitsStyle = .full
         formatter.allowedUnits = [.hour, .minute]
         formatter.zeroFormattingBehavior = [.dropLeading]
-        let timeInterval = Date().timeIntervalSince(startDate)
+        let timeInterval = targetDate.timeIntervalSince(startDate)
         return formatter.string(from: timeInterval)!
     }
 }

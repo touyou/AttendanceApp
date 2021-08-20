@@ -11,7 +11,7 @@ import SwiftUI
 struct GpAttendanceApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(AppState())
+            MainView().environmentObject(AppState())
         }
     }
 }
