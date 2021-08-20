@@ -98,7 +98,6 @@
 		4320C73D268EF15900AEF27B = {
 			isa = PBXGroup;
 			children = (
-				4320C775268EF36D00AEF27B /* GpAttendanceWidgetExtension.entitlements */,
 				4320C748268EF15900AEF27B /* GpAttendance */,
 				4320C762268EF2AA00AEF27B /* GpAttendanceWidget */,
 				4320C75D268EF2AA00AEF27B /* Frameworks */,
@@ -118,17 +117,11 @@
 		4320C748268EF15900AEF27B /* GpAttendance */ = {
 			isa = PBXGroup;
 			children = (
-				4320C774268EF33700AEF27B /* GpAttendance.entitlements */,
-				4320C749268EF15900AEF27B /* GpAttendanceApp.swift */,
-				4320C74B268EF15900AEF27B /* ContentView.swift */,
-				4320C74D268EF15A00AEF27B /* Assets.xcassets */,
-				4320C752268EF15A00AEF27B /* Info.plist */,
-				4320C74F268EF15A00AEF27B /* Preview Content */,
-				4320C772268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift */,
-				4320C776268EFAB700AEF27B /* UserDefaultStore.swift */,
-				4320C77A268F095C00AEF27B /* SettingView.swift */,
-				4320C77C268F114400AEF27B /* AppState.swift */,
-				4320C77E268F13EB00AEF27B /* Calendar+.swift */,
+				438C1A3926CF95F300DB20AD /* App */,
+				438C1A3826CF95E100DB20AD /* Assets */,
+				438C1A3C26CF964700DB20AD /* Data */,
+				438C1A3626CF957500DB20AD /* Configuration */,
+				438C1A3B26CF962E00DB20AD /* View */,
 			);
 			path = GpAttendance;
 			sourceTree = "<group>";
@@ -153,12 +146,91 @@
 		4320C762268EF2AA00AEF27B /* GpAttendanceWidget */ = {
 			isa = PBXGroup;
 			children = (
-				4320C763268EF2AA00AEF27B /* GpAttendanceWidget.swift */,
-				4320C765268EF2AA00AEF27B /* GpAttendanceWidget.intentdefinition */,
-				4320C766268EF2AB00AEF27B /* Assets.xcassets */,
-				4320C768268EF2AB00AEF27B /* Info.plist */,
+				438C1A3E26CF967800DB20AD /* Assets */,
+				438C1A3726CF958B00DB20AD /* Configuration */,
+				438C1A3D26CF966C00DB20AD /* Widget */,
 			);
 			path = GpAttendanceWidget;
+			sourceTree = "<group>";
+		};
+		438C1A3626CF957500DB20AD /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				4320C774268EF33700AEF27B /* GpAttendance.entitlements */,
+				4320C752268EF15A00AEF27B /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		438C1A3726CF958B00DB20AD /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				4320C775268EF36D00AEF27B /* GpAttendanceWidgetExtension.entitlements */,
+				4320C768268EF2AB00AEF27B /* Info.plist */,
+				4320C765268EF2AA00AEF27B /* GpAttendanceWidget.intentdefinition */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		438C1A3826CF95E100DB20AD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4320C74D268EF15A00AEF27B /* Assets.xcassets */,
+				4320C74F268EF15A00AEF27B /* Preview Content */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		438C1A3926CF95F300DB20AD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				438C1A3A26CF960B00DB20AD /* Foundation */,
+				4320C749268EF15900AEF27B /* GpAttendanceApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		438C1A3A26CF960B00DB20AD /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				4320C77E268F13EB00AEF27B /* Calendar+.swift */,
+				4320C772268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		438C1A3B26CF962E00DB20AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4320C74B268EF15900AEF27B /* ContentView.swift */,
+				4320C77A268F095C00AEF27B /* SettingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		438C1A3C26CF964700DB20AD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4320C776268EFAB700AEF27B /* UserDefaultStore.swift */,
+				4320C77C268F114400AEF27B /* AppState.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		438C1A3D26CF966C00DB20AD /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				4320C763268EF2AA00AEF27B /* GpAttendanceWidget.swift */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		438C1A3E26CF967800DB20AD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4320C766268EF2AB00AEF27B /* Assets.xcassets */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,12 +489,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = GpAttendance/GpAttendance.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GpAttendance/Configuration/GpAttendance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GpAttendance/Preview Content\"";
 				DEVELOPMENT_TEAM = B4S4333JDW;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = GpAttendance/Info.plist;
+				INFOPLIST_FILE = GpAttendance/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,12 +513,12 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = GpAttendance/GpAttendance.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GpAttendance/Configuration/GpAttendance.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"GpAttendance/Preview Content\"";
 				DEVELOPMENT_TEAM = B4S4333JDW;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = GpAttendance/Info.plist;
+				INFOPLIST_FILE = GpAttendance/Configuration/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,10 +536,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = GpAttendanceWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GpAttendanceWidget/Configuration/GpAttendanceWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4S4333JDW;
-				INFOPLIST_FILE = GpAttendanceWidget/Info.plist;
+				INFOPLIST_FILE = GpAttendanceWidget/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,10 +558,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = GpAttendanceWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GpAttendanceWidget/Configuration/GpAttendanceWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B4S4333JDW;
-				INFOPLIST_FILE = GpAttendanceWidget/Info.plist;
+				INFOPLIST_FILE = GpAttendanceWidget/Configuration/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

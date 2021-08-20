@@ -23,7 +23,7 @@ struct Provider: TimelineProvider {
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let date = Date()
-        let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 1, to: date)!
+        let nextUpdateDate = Calendar.current.date(byAdding: .minute, value: 15, to: date)!
         let entry = AttendEntry(date: date, isSetUrls: userDefaultStore.arriveUrl != nil && userDefaultStore.leaveUrl != nil, isArrived: userDefaultStore.isArrived, arriveDate: userDefaultStore.arriveDate)
 
         let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
