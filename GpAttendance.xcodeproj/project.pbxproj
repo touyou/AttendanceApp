@@ -29,6 +29,8 @@
 		435BB0AE26E1FBB5001B3261 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0AD26E1FBB5001B3261 /* PhoneConnector.swift */; };
 		435BB0B026E20E2D001B3261 /* AppStateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */; };
 		435BB0B126E20FB0001B3261 /* AppStateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */; };
+		435BB0B326E21B07001B3261 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435BB0B226E21B07001B3261 /* CloudKit.framework */; };
+		435BB0B526E21BA0001B3261 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0B426E21BA0001B3261 /* CloudKitManager.swift */; };
 		438C1A4326CF998C00DB20AD /* ShouldSetURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A4226CF998C00DB20AD /* ShouldSetURLView.swift */; };
 		438C1A4526CF9A0900DB20AD /* WorkingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A4426CF9A0900DB20AD /* WorkingTimeView.swift */; };
 		438C1A4926CF9A7C00DB20AD /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A4826CF9A7C00DB20AD /* AlertItem.swift */; };
@@ -131,6 +133,8 @@
 		4320C77E268F13EB00AEF27B /* Calendar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+.swift"; sourceTree = "<group>"; };
 		435BB0AD26E1FBB5001B3261 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
 		435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateEntity.swift; sourceTree = "<group>"; };
+		435BB0B226E21B07001B3261 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		435BB0B426E21BA0001B3261 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		438C1A4226CF998C00DB20AD /* ShouldSetURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldSetURLView.swift; sourceTree = "<group>"; };
 		438C1A4426CF9A0900DB20AD /* WorkingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingTimeView.swift; sourceTree = "<group>"; };
 		438C1A4826CF9A7C00DB20AD /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				435BB0B326E21B07001B3261 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +232,7 @@
 		4320C75D268EF2AA00AEF27B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				435BB0B226E21B07001B3261 /* CloudKit.framework */,
 				4320C75E268EF2AA00AEF27B /* WidgetKit.framework */,
 				4320C760268EF2AA00AEF27B /* SwiftUI.framework */,
 			);
@@ -304,6 +310,7 @@
 				4320C776268EFAB700AEF27B /* UserDefaultStore.swift */,
 				4320C77C268F114400AEF27B /* AppState.swift */,
 				438C1A7E26CFA63B00DB20AD /* WatchConnector.swift */,
+				435BB0B426E21BA0001B3261 /* CloudKitManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -557,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				435BB0B526E21BA0001B3261 /* CloudKitManager.swift in Sources */,
 				438C1A4B26CF9B4300DB20AD /* HomeTimeView.swift in Sources */,
 				438C1A4926CF9A7C00DB20AD /* AlertItem.swift in Sources */,
 				4320C773268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift in Sources */,
