@@ -39,6 +39,7 @@ struct SettingView: View {
         .navigationBarItems(trailing: Button("保存") {
             appState.setArriveUrl(URL(string: arriveUrlString))
             appState.setLeaveUrl(URL(string: leaveUrlString))
+            appState.sendLatest()
             showingAlert = true
         })
         .alert(isPresented: $showingAlert) {

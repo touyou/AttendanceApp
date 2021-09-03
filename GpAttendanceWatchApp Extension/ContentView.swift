@@ -8,16 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    @ObservedObject private var phoneConnector = PhoneConnector()
+    @State private var reachable = "No"
+    @State var date = Date()
+    @State var timer: Timer?
 
     var body: some View {
-//        if appState.arriveUrl == nil || appState.leaveUrl == nil {
-            Text("⚒ アプリでURLを設定しよう")
-//        } else if appState.isArrived {
-//            Text("出勤中")
-//        } else {
-//            Text("退勤中")
-//        }
+        VStack {
+            if let isArrived = phoneConnector.data?.isArrived {
+                if phoneConnector.data?.arriveUrl == nil ||
+                    phoneConnector.data?.leaveUrl == nil {
+                    Text("⚒ アプリでURLを設定してください")
+                } else if isArrived {
+                    Text("⏰ 現在の勤務時間: " + Calendar.shared.getDurationText(from: phoneConnector.data!.arriveDate!, to: date))
+                } else {
+                    Text("🏡 退勤中")
+                }
+            } else {
+                Text("⚒ アプリを開いてください")
+                Button(action: {
+                    reachable = phoneConnector.isReachable ? "Yes" : "No"
+                }, label: {
+                    Text("Fetch \(reachable)")
+                })
+            }
+        }
+        .onAppear {
+            reachable = phoneConnector.isReachable ? "Yes" : "No"
+            self.timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
+                self.date = Date()
+            }
+        }
+        .onDisappear {
+            self.timer?.invalidate()
+            self.timer = nil
+        }
     }
 }
 

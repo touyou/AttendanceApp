@@ -26,6 +26,9 @@
 		4320C77D268F114400AEF27B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77C268F114400AEF27B /* AppState.swift */; };
 		4320C77F268F13EB00AEF27B /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77E268F13EB00AEF27B /* Calendar+.swift */; };
 		4320C780268F157800AEF27B /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77E268F13EB00AEF27B /* Calendar+.swift */; };
+		435BB0AE26E1FBB5001B3261 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0AD26E1FBB5001B3261 /* PhoneConnector.swift */; };
+		435BB0B026E20E2D001B3261 /* AppStateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */; };
+		435BB0B126E20FB0001B3261 /* AppStateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */; };
 		438C1A4326CF998C00DB20AD /* ShouldSetURLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A4226CF998C00DB20AD /* ShouldSetURLView.swift */; };
 		438C1A4526CF9A0900DB20AD /* WorkingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A4426CF9A0900DB20AD /* WorkingTimeView.swift */; };
 		438C1A4926CF9A7C00DB20AD /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A4826CF9A7C00DB20AD /* AlertItem.swift */; };
@@ -126,6 +129,8 @@
 		4320C77A268F095C00AEF27B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		4320C77C268F114400AEF27B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		4320C77E268F13EB00AEF27B /* Calendar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+.swift"; sourceTree = "<group>"; };
+		435BB0AD26E1FBB5001B3261 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
+		435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateEntity.swift; sourceTree = "<group>"; };
 		438C1A4226CF998C00DB20AD /* ShouldSetURLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldSetURLView.swift; sourceTree = "<group>"; };
 		438C1A4426CF9A0900DB20AD /* WorkingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingTimeView.swift; sourceTree = "<group>"; };
 		438C1A4826CF9A7C00DB20AD /* AlertItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
@@ -350,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				438C1A4826CF9A7C00DB20AD /* AlertItem.swift */,
+				435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 				438C1A7926CF9F4500DB20AD /* GpAttendanceWatchApp Extension.entitlements */,
 				438C1A5C26CF9EEC00DB20AD /* GpAttendanceApp.swift */,
 				438C1A5E26CF9EEC00DB20AD /* ContentView.swift */,
+				435BB0AD26E1FBB5001B3261 /* PhoneConnector.swift */,
 				438C1A6026CF9EEC00DB20AD /* NotificationController.swift */,
 				438C1A6226CF9EEC00DB20AD /* NotificationView.swift */,
 				438C1A6426CF9EEC00DB20AD /* ComplicationController.swift */,
@@ -562,6 +569,7 @@
 				4320C77B268F095C00AEF27B /* SettingView.swift in Sources */,
 				4320C74C268EF15900AEF27B /* MainView.swift in Sources */,
 				4320C74A268EF15900AEF27B /* GpAttendanceApp.swift in Sources */,
+				435BB0B026E20E2D001B3261 /* AppStateEntity.swift in Sources */,
 				4320C77F268F13EB00AEF27B /* Calendar+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,8 +594,10 @@
 				438C1A7B26CFA0FD00DB20AD /* UserDefaults+PropertyWrapper.swift in Sources */,
 				438C1A5F26CF9EEC00DB20AD /* ContentView.swift in Sources */,
 				438C1A6526CF9EEC00DB20AD /* ComplicationController.swift in Sources */,
+				435BB0AE26E1FBB5001B3261 /* PhoneConnector.swift in Sources */,
 				438C1A5D26CF9EEC00DB20AD /* GpAttendanceApp.swift in Sources */,
 				438C1A6326CF9EEC00DB20AD /* NotificationView.swift in Sources */,
+				435BB0B126E20FB0001B3261 /* AppStateEntity.swift in Sources */,
 				438C1A7C26CFA10200DB20AD /* Calendar+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

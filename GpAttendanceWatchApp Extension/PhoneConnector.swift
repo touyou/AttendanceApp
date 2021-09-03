@@ -1,23 +1,20 @@
 //
-//  WatchConnector.swift
-//  GpAttendance
+//  PhoneConnector.swift
+//  GpAttendanceWatchApp Extension
 //
-//  Created by emp-mac-yosuke-fujii on 2021/08/20.
+//  Created by emp-mac-yosuke-fujii on 2021/09/03.
 //
 
 import WatchConnectivity
 import os.log
 
-final class WatchConnector: NSObject {
-    static let shared = WatchConnector()
-
-    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Watch Connector")
+final class PhoneConnector: NSObject, ObservableObject {
+    private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Phone Connector")
     private var session: WCSession
-
+    @Published private(set) var data: AppStateEntity?
     var isReachable: Bool {
         session.isReachable
     }
-    var sendLatest: (()->Void)?
 
     init(session: WCSession = .default) {
         self.session = session
@@ -33,28 +30,13 @@ final class WatchConnector: NSObject {
             self?.logger.error("\(error.localizedDescription)")
         })
     }
-
-    func sendMessage(_ messageData: Data) {
-        session.sendMessageData(messageData, replyHandler:  { [weak self] reply in
-            self?.logger.debug("\(reply)")
-        }, errorHandler: { [weak self] error in
-            self?.logger.error("\(error.localizedDescription)")
-        })
-    }
 }
 
-extension WatchConnector: WCSessionDelegate {
-    func sessionDidBecomeInactive(_ session: WCSession) {
-    }
-
-    func sessionDidDeactivate(_ session: WCSession) {
-    }
-
+extension PhoneConnector: WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         switch activationState {
         case .activated:
             logger.debug("activated")
-            sendLatest?()
         case .inactive:
             logger.debug("inactive")
         case .notActivated:
@@ -67,7 +49,12 @@ extension WatchConnector: WCSessionDelegate {
         }
     }
 
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        logger.debug("did receive \(message)")
+    func session(_ session: WCSession, didReceiveMessageData messageData: Data, replyHandler: @escaping (Data) -> Void) {
+        logger.debug("did receive \(messageData)")
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.data = AppStateEntity.decodeData(messageData)
+        }
+        replyHandler(messageData)
     }
 }

@@ -14,6 +14,7 @@ struct MainView: View {
     // MARK: State
     @State private var showingSettingView = false
     @State private var showingAlert: AlertItem?
+    @State private var reachable = "No"
 
     var body: some View {
         NavigationView {
@@ -23,12 +24,23 @@ struct MainView: View {
                     EmptyView()
                 }
 
-                if appState.arriveUrl == nil || appState.leaveUrl == nil {
-                    ShouldSetURLView()
-                } else if appState.isArrived {
-                    WorkingTimeView(showingAlert: $showingAlert)
-                } else {
-                    HomeTimeView(showingAlert: $showingAlert)
+                VStack {
+                    if appState.arriveUrl == nil || appState.leaveUrl == nil {
+                        ShouldSetURLView()
+                    } else if appState.isArrived {
+                        WorkingTimeView(showingAlert: $showingAlert)
+                    } else {
+                        HomeTimeView(showingAlert: $showingAlert)
+                    }
+
+                    if !appState.isReachable {
+                        Button(action: {
+                            reachable = "No"
+                            appState.sendLatest()
+                        }, label: {
+                            Text("Fetch \(reachable)")
+                        })
+                    }
                 }
 
             }
@@ -40,6 +52,14 @@ struct MainView: View {
             })
             .alert(item: $showingAlert) { item in
                 item.alert
+            }
+        }
+        .onAppear {
+            if appState.isReachable {
+                reachable = "Yes"
+                appState.sendLatest()
+            } else {
+                reachable = "No"
             }
         }
     }
