@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct MainView: View {
-
+    
     @EnvironmentObject private var appState: AppState
-
+    
     // MARK: State
     @State private var showingSettingView = false
     @State private var showingAlert: AlertItem?
     @State private var reachable = "No"
-
+    
     var body: some View {
         NavigationView {
             ZStack {
                 NavigationLink(
                     destination: SettingView(), isActive: $showingSettingView) {
-                    EmptyView()
-                }
-
+                        EmptyView()
+                    }
+                
                 VStack {
                     if appState.arriveUrl == nil || appState.leaveUrl == nil {
                         ShouldSetURLView()
@@ -32,7 +32,7 @@ struct MainView: View {
                     } else {
                         HomeTimeView(showingAlert: $showingAlert)
                     }
-
+                    
                     if !appState.isReachable {
                         Button(action: {
                             reachable = "No"
@@ -41,8 +41,14 @@ struct MainView: View {
                             Text("Fetch \(reachable)")
                         })
                     }
+                    Button(action: {
+                        appState.changeMigrationStatus(false)
+                        appState.migrateAndInitialize()
+                    }, label: {
+                        Text("CloudKit Migration")
+                    })
                 }
-
+                
             }
             .navigationTitle("Gp勤怠管理")
             .navigationBarItems(trailing: Button(action: {

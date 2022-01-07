@@ -12,4 +12,5 @@ struct UserDefaultStore {
     @UserDefault("leaveUrl", default: nil) var leaveUrl: URL?
     @UserDefault("arrived", default: false) var isArrived: Bool
     @UserDefault("arriveDate", default: nil) var arriveDate: Date?
+    @UserDefault("isMigrated", default: false) var isMigrated: Bool
 }
