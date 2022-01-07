@@ -83,6 +83,22 @@ final class CloudKitManager {
             })
         }
     }
+
+    func registerNotification() {
+        let subscription = CKQuerySubscription(recordType: recordType, predicate: NSPredicate(value: true), options: [.firesOnRecordCreation, .firesOnRecordUpdate])
+        let notification = CKSubscription.NotificationInfo()
+        notification.shouldSendContentAvailable = true
+        subscription.notificationInfo = notification
+        database.save(subscription) { subscription, error in
+            if let error = error {
+                print(error)
+            } else if let subscription = subscription {
+                print(subscription)
+            } else {
+                print("unknown")
+            }
+        }
+    }
 }
 
 extension AppStateEntity {
