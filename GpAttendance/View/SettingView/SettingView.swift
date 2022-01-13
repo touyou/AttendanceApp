@@ -51,6 +51,19 @@ struct SettingView: View {
             arriveUrlString = appState.arriveUrl?.absoluteString ?? ""
             leaveUrlString = appState.leaveUrl?.absoluteString ?? ""
         })
+        .onReceive(NotificationCenter.default.publisher(for: CloudKitManager.ckUpdateNotification)) { _ in
+            Task {
+                do {
+                    try await appState.fetchLatest()
+                    await MainActor.run {
+                        arriveUrlString = appState.arriveUrl?.absoluteString ?? ""
+                        leaveUrlString = appState.leaveUrl?.absoluteString ?? ""
+                    }
+                } catch {
+                    print("fetch error: \(error)")
+                }
+            }
+        }
     }
 }
 

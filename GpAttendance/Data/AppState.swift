@@ -24,65 +24,58 @@ final class AppState: ObservableObject {
     }
     
     init() {
-        migrateAndInitialize()
-        //        watchConnector.sendLatest = sendLatest
-    }
-    
-    private func needMigration() -> Bool {
-        if defaultStore.isMigrated {
-            return false
+        Task {
+            do {
+                try await fetchLatest()
+            } catch {
+                print("initialize error: \(error)")
+            }
         }
-        
-        if defaultStore.leaveUrl == nil && defaultStore.arriveDate == nil && defaultStore.arriveUrl == nil {
-            return false
+        watchConnector.sendLatest = sendLatest
+    }
+
+    func fetchLatest() async throws {
+        try await cloudKitManager.fetch()
+        await MainActor.run {
+            updateDataFromCloudKit()
         }
-        
-        return true
     }
-    
-    func changeMigrationStatus(_ flag: Bool) {
-        defaultStore.isMigrated = flag
-    }
-    
-    func migrateAndInitialize() {
-        if needMigration() {
-            let entity = AppStateEntity(arriveUrl: defaultStore.arriveUrl, leaveUrl: defaultStore.leaveUrl, isArrived: defaultStore.isArrived, arriveDate: defaultStore.arriveDate)
-            arriveUrl = defaultStore.arriveUrl
-            leaveUrl = defaultStore.leaveUrl
-            isArrived = defaultStore.isArrived
-            arriveDate = defaultStore.arriveDate
-            cloudKitManager.set(entity)
-            defaultStore.isMigrated = true
-        } else {
-            cloudKitManager.fetch().receive(on: RunLoop.main).sink(receiveCompletion: { status in
-                print("completed: \(status)")
-            }, receiveValue: { [weak self] entity in
-                guard let self = self else { return }
-                self.arriveUrl = entity?.arriveUrl
-                self.leaveUrl = entity?.leaveUrl
-                self.isArrived = entity?.isArrived ?? false
-                self.arriveDate = entity?.arriveDate
-            }).store(in: &cancellables)
+
+    private func updateDataFromCloudKit() {
+        if let entity = cloudKitManager.currentEntity {
+            arriveUrl = entity.arriveUrl
+            leaveUrl = entity.leaveUrl
+            isArrived = entity.isArrived
+            arriveDate = entity.arriveDate
+
+            defaultStore.arriveUrl = entity.arriveUrl
+            defaultStore.leaveUrl = entity.leaveUrl
+            defaultStore.isArrived = entity.isArrived
+            defaultStore.arriveDate = entity.arriveDate
         }
     }
     
     func setArriveUrl(_ url: URL?) {
         cloudKitManager.set(url?.absoluteString, forKey: .arriveUrl)
+        defaultStore.arriveUrl = url
         arriveUrl = url
     }
     
     func setLeaveUrl(_ url: URL?) {
         cloudKitManager.set(url?.absoluteString, forKey: .leaveUrl)
+        defaultStore.leaveUrl = url
         leaveUrl = url
     }
     
     func toggleArrived() {
         isArrived.toggle()
+        defaultStore.isArrived = isArrived
         cloudKitManager.set(isArrived, forKey: .isArrived)
     }
     
     func setArriveDate(_ date: Date?) {
         cloudKitManager.set(date, forKey: .arriveDate)
+        defaultStore.arriveDate = date
         arriveDate = date
     }
     

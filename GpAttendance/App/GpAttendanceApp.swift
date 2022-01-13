@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WidgetKit
+import CloudKit
 
 @main
 struct GpAttendanceApp: App {
@@ -27,14 +28,16 @@ struct GpAttendanceApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        UIApplication.shared.registerForRemoteNotifications()
+
         return true
     }
 
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print(deviceToken)
-    }
-
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print(error)
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) async -> UIBackgroundFetchResult {
+        if CKNotification(fromRemoteNotificationDictionary: userInfo) != nil {
+            NotificationCenter.default.post(name: CloudKitManager.ckUpdateNotification, object: nil)
+            return UIBackgroundFetchResult.newData
+        }
+        return .noData
     }
 }

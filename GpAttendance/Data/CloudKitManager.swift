@@ -11,14 +11,22 @@ import Combine
 /// CloudKitに関する処理を行うマネージャクラス
 final class CloudKitManager {
     static let shared = CloudKitManager()
-    
-    private let recordId = CKRecord.ID(recordName: "GpAttendance")
+    static let ckUpdateNotification = Notification.Name("cloudKitChanged")
+
     private let recordType = "Attendance"
     private let container = CKContainer.default()
     private lazy var database = container.privateCloudDatabase
 
     private var record: CKRecord?
-    
+    private var recordId: CKRecord.ID?
+
+    var currentEntity: AppStateEntity? {
+        if let record = record {
+            return AppStateEntity.convert(record)
+        } else {
+            return nil
+        }
+    }
 
     enum Keys: String {
         case arriveUrl
@@ -28,12 +36,20 @@ final class CloudKitManager {
     }
 
     init() {
-        database.fetch(withRecordID: recordId) { [weak self] (newRecord, error) in
-            guard let self = self else { return }
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let newRecord = newRecord {
-                self.record = newRecord
+        Task {
+            let subscriptions = try await database.allSubscriptions()
+            if subscriptions.isEmpty {
+                registerNotification()
+                recordId = CKRecord.ID(recordName: "GpAttendance")
+            } else {
+                do {
+                    let (matchingResults, _) = try await database.records(matching: CKQuery(recordType: recordType, predicate: NSPredicate(value: true)))
+                    let result = matchingResults.first
+                    recordId = result?.0 ?? CKRecord.ID(recordName: "GpAttendance")
+                    record = try result?.1.get()
+                } catch {
+                    print("error: \(error)")
+                }
             }
         }
     }
@@ -43,12 +59,18 @@ final class CloudKitManager {
         if let record = record {
             record[key.rawValue] = object
         } else {
-            record = CKRecord(recordType: recordType, recordID: recordId)
+            recordId = CKRecord.ID(recordName: "GpAttendance")
+            record = CKRecord(recordType: recordType, recordID: recordId!)
             record![key.rawValue] = object
         }
-        database.save(record!) { record, error in
-            print("saved record \(record) / error: \(error)")
-        }
+        database.modifyRecords(saving: record.flatMap { [$0] } ?? [], deleting: [], savePolicy: .changedKeys, atomically: true, completionHandler: { result in
+            switch result {
+            case .success(let value):
+                print("Success update: \(value)")
+            case .failure(let error):
+                print("Failure update: \(error)")
+            }
+        })
     }
 
     /// AppStateEntityごとCloudKitに保存する
@@ -60,28 +82,25 @@ final class CloudKitManager {
             record[Keys.arriveDate.rawValue] = entity.arriveDate
         }
         if record == nil {
-            record = CKRecord(recordType: recordType, recordID: recordId)
+            recordId = CKRecord.ID(recordName: "GpAttendance")
+            record = CKRecord(recordType: recordType, recordID: recordId!)
         }
         setRecord(&record!)
-        database.save(record!) { record, error in
-            print("saved record \(record) / error: \(error)")
-        }
+        database.modifyRecords(saving: record.flatMap { [$0] } ?? [], deleting: [], savePolicy: .changedKeys, atomically: true, completionHandler: { result in
+            switch result {
+            case .success(let value):
+                print("Success update: \(value)")
+            case .failure(let error):
+                print("Failure update: \(error)")
+            }
+        })
     }
 
-    /// AppStateEntityの形でCloudKitから取り出す
-    func fetch() -> Future<AppStateEntity?, Error> {
-        Future<AppStateEntity?, Error> { [weak self] promise in
-            guard let self = self else { return }
-            self.database.fetch(withRecordID: self.recordId, completionHandler: { ckrecord, error in
-                if let error = error {
-                    promise(.failure(error))
-                } else if let ckrecord = ckrecord {
-                    promise(.success(AppStateEntity.convert(ckrecord)))
-                } else {
-                    promise(.success(nil))
-                }
-            })
-        }
+    func fetch() async throws {
+        let (matchingResults, _) = try await database.records(matching: CKQuery(recordType: recordType, predicate: NSPredicate(value: true)))
+        let result = matchingResults.first
+        recordId = result?.0 ?? CKRecord.ID(recordName: "GpAttendance")
+        record = try result?.1.get()
     }
 
     func registerNotification() {

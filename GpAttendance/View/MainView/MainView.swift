@@ -41,12 +41,6 @@ struct MainView: View {
                             Text("Fetch \(reachable)")
                         })
                     }
-                    Button(action: {
-                        appState.changeMigrationStatus(false)
-                        appState.migrateAndInitialize()
-                    }, label: {
-                        Text("CloudKit Migration")
-                    })
                 }
                 
             }
@@ -68,6 +62,16 @@ struct MainView: View {
                 reachable = "No"
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: CloudKitManager.ckUpdateNotification)) { _ in
+            Task {
+                do {
+                    try await appState.fetchLatest()
+                } catch {
+                    print("fetch error: \(error)")
+                }
+            }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
