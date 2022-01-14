@@ -25,7 +25,6 @@ struct HomeTimeView: View {
                         } else {
                             appState.toggleArrived()
                             appState.setArriveDate(Date())
-                            appState.sendLatest()
                             showingAlert = AlertItem(alert: Alert(title: Text("出社しました！ファイト！")))
                         }
                     }

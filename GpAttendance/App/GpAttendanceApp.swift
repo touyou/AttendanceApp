@@ -36,7 +36,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) async -> UIBackgroundFetchResult {
         if CKNotification(fromRemoteNotificationDictionary: userInfo) != nil {
             NotificationCenter.default.post(name: CloudKitManager.ckUpdateNotification, object: nil)
-            return UIBackgroundFetchResult.newData
+            return .newData
         }
         return .noData
     }

@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import CloudKit
 
 @main
 struct GpAttendanceApp: App {
+    @WKExtensionDelegateAdaptor(ExtensionDelegate.self) private var extensionDelegate
+
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
@@ -17,5 +20,15 @@ struct GpAttendanceApp: App {
         }
 
         WKNotificationScene(controller: NotificationController.self, category: "myCategory")
+    }
+}
+
+class ExtensionDelegate: NSObject, WKExtensionDelegate {
+    func didReceiveRemoteNotification(_ userInfo: [AnyHashable : Any]) async -> WKBackgroundFetchResult {
+        if CKNotification(fromRemoteNotificationDictionary: userInfo) != nil {
+            NotificationCenter.default.post(name: CloudKitManager.ckUpdateNotification, object: nil)
+            return .newData
+        }
+        return .noData
     }
 }

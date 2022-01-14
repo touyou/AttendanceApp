@@ -26,7 +26,6 @@ struct WorkingTimeView: View {
                             showingAlert = AlertItem(alert: Alert(title: Text("エラー"), message: Text(error.localizedDescription)))
                         } else {
                             appState.toggleArrived()
-                            appState.sendLatest()
                             showingAlert = AlertItem(alert: Alert(title: Text("退社しました！おつかれさま！")))
                         }
                     }

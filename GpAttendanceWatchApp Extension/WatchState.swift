@@ -1,18 +1,16 @@
 //
-//  AppState.swift
-//  GpAttendance
+//  WatchState.swift
+//  GpAttendanceWatchApp Extension
 //
-//  Created by emp-mac-yosuke-fujii on 2021/07/02.
+//  Created by emp-mac-yosuke-fujii on 2022/01/14.
 //
 
 import SwiftUI
 import Combine
 
-final class AppState: ObservableObject {
-    private var defaultStore = UserDefaultStore()
+final class WatchState: ObservableObject {
     private let cloudKitManager = CloudKitManager.shared
-    private var cancellables = Set<AnyCancellable>()
-    
+
     @Published var arriveUrl: URL?
     @Published var leaveUrl: URL?
     @Published var isArrived: Bool = false
@@ -41,35 +39,16 @@ final class AppState: ObservableObject {
             leaveUrl = entity.leaveUrl
             isArrived = entity.isArrived
             arriveDate = entity.arriveDate
-
-            defaultStore.arriveUrl = entity.arriveUrl
-            defaultStore.leaveUrl = entity.leaveUrl
-            defaultStore.isArrived = entity.isArrived
-            defaultStore.arriveDate = entity.arriveDate
         }
     }
-    
-    func setArriveUrl(_ url: URL?) {
-        cloudKitManager.set(url?.absoluteString, forKey: .arriveUrl)
-        defaultStore.arriveUrl = url
-        arriveUrl = url
-    }
-    
-    func setLeaveUrl(_ url: URL?) {
-        cloudKitManager.set(url?.absoluteString, forKey: .leaveUrl)
-        defaultStore.leaveUrl = url
-        leaveUrl = url
-    }
-    
+
     func toggleArrived() {
         isArrived.toggle()
-        defaultStore.isArrived = isArrived
         cloudKitManager.set(isArrived, forKey: .isArrived)
     }
-    
+
     func setArriveDate(_ date: Date?) {
         cloudKitManager.set(date, forKey: .arriveDate)
-        defaultStore.arriveDate = date
         arriveDate = date
     }
 }

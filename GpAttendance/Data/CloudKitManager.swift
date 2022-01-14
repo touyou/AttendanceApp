@@ -14,7 +14,7 @@ final class CloudKitManager {
     static let ckUpdateNotification = Notification.Name("cloudKitChanged")
 
     private let recordType = "Attendance"
-    private let container = CKContainer.default()
+    private let container = CKContainer(identifier: "iCloud.dev.touyou.GpAttendance")
     private lazy var database = container.privateCloudDatabase
 
     private var record: CKRecord?

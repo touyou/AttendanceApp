@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43075FF12791640D00E6CB52 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0B426E21BA0001B3261 /* CloudKitManager.swift */; };
+		43075FF3279164E000E6CB52 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43075FF2279164E000E6CB52 /* CloudKit.framework */; };
+		43075FF52791689300E6CB52 /* WatchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43075FF42791689300E6CB52 /* WatchState.swift */; };
 		4320C74A268EF15900AEF27B /* GpAttendanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C749268EF15900AEF27B /* GpAttendanceApp.swift */; };
 		4320C74C268EF15900AEF27B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C74B268EF15900AEF27B /* MainView.swift */; };
 		4320C74E268EF15A00AEF27B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4320C74D268EF15A00AEF27B /* Assets.xcassets */; };
@@ -26,7 +29,6 @@
 		4320C77D268F114400AEF27B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77C268F114400AEF27B /* AppState.swift */; };
 		4320C77F268F13EB00AEF27B /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77E268F13EB00AEF27B /* Calendar+.swift */; };
 		4320C780268F157800AEF27B /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77E268F13EB00AEF27B /* Calendar+.swift */; };
-		435BB0AE26E1FBB5001B3261 /* PhoneConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0AD26E1FBB5001B3261 /* PhoneConnector.swift */; };
 		435BB0B026E20E2D001B3261 /* AppStateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */; };
 		435BB0B126E20FB0001B3261 /* AppStateEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */; };
 		435BB0B326E21B07001B3261 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435BB0B226E21B07001B3261 /* CloudKit.framework */; };
@@ -47,7 +49,6 @@
 		438C1A6F26CF9EEE00DB20AD /* GpAttendanceWatchApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 438C1A4E26CF9EE700DB20AD /* GpAttendanceWatchApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		438C1A7B26CFA0FD00DB20AD /* UserDefaults+PropertyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C772268EF2EB00AEF27B /* UserDefaults+PropertyWrapper.swift */; };
 		438C1A7C26CFA10200DB20AD /* Calendar+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4320C77E268F13EB00AEF27B /* Calendar+.swift */; };
-		438C1A7F26CFA63B00DB20AD /* WatchConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438C1A7E26CFA63B00DB20AD /* WatchConnector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		43075FF2279164E000E6CB52 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS8.3.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		43075FF42791689300E6CB52 /* WatchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchState.swift; sourceTree = "<group>"; };
 		4320C746268EF15900AEF27B /* GpAttendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GpAttendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4320C749268EF15900AEF27B /* GpAttendanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpAttendanceApp.swift; sourceTree = "<group>"; };
 		4320C74B268EF15900AEF27B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -131,7 +134,6 @@
 		4320C77A268F095C00AEF27B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		4320C77C268F114400AEF27B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		4320C77E268F13EB00AEF27B /* Calendar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+.swift"; sourceTree = "<group>"; };
-		435BB0AD26E1FBB5001B3261 /* PhoneConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneConnector.swift; sourceTree = "<group>"; };
 		435BB0AF26E20E2D001B3261 /* AppStateEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateEntity.swift; sourceTree = "<group>"; };
 		435BB0B226E21B07001B3261 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		435BB0B426E21BA0001B3261 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
@@ -154,7 +156,6 @@
 		438C1A6C26CF9EEE00DB20AD /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		438C1A7826CF9F2800DB20AD /* GpAttendanceWatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GpAttendanceWatchApp.entitlements; sourceTree = "<group>"; };
 		438C1A7926CF9F4500DB20AD /* GpAttendanceWatchApp Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "GpAttendanceWatchApp Extension.entitlements"; sourceTree = "<group>"; };
-		438C1A7E26CFA63B00DB20AD /* WatchConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43075FF3279164E000E6CB52 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +234,7 @@
 		4320C75D268EF2AA00AEF27B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43075FF2279164E000E6CB52 /* CloudKit.framework */,
 				435BB0B226E21B07001B3261 /* CloudKit.framework */,
 				4320C75E268EF2AA00AEF27B /* WidgetKit.framework */,
 				4320C760268EF2AA00AEF27B /* SwiftUI.framework */,
@@ -309,7 +312,6 @@
 			children = (
 				4320C776268EFAB700AEF27B /* UserDefaultStore.swift */,
 				4320C77C268F114400AEF27B /* AppState.swift */,
-				438C1A7E26CFA63B00DB20AD /* WatchConnector.swift */,
 				435BB0B426E21BA0001B3261 /* CloudKitManager.swift */,
 			);
 			path = Data;
@@ -383,7 +385,6 @@
 				438C1A7926CF9F4500DB20AD /* GpAttendanceWatchApp Extension.entitlements */,
 				438C1A5C26CF9EEC00DB20AD /* GpAttendanceApp.swift */,
 				438C1A5E26CF9EEC00DB20AD /* ContentView.swift */,
-				435BB0AD26E1FBB5001B3261 /* PhoneConnector.swift */,
 				438C1A6026CF9EEC00DB20AD /* NotificationController.swift */,
 				438C1A6226CF9EEC00DB20AD /* NotificationView.swift */,
 				438C1A6426CF9EEC00DB20AD /* ComplicationController.swift */,
@@ -391,6 +392,7 @@
 				438C1A6B26CF9EEE00DB20AD /* Info.plist */,
 				438C1A6C26CF9EEE00DB20AD /* PushNotificationPayload.apns */,
 				438C1A6826CF9EEE00DB20AD /* Preview Content */,
+				43075FF42791689300E6CB52 /* WatchState.swift */,
 			);
 			path = "GpAttendanceWatchApp Extension";
 			sourceTree = "<group>";
@@ -571,7 +573,6 @@
 				438C1A4326CF998C00DB20AD /* ShouldSetURLView.swift in Sources */,
 				4320C777268EFAB700AEF27B /* UserDefaultStore.swift in Sources */,
 				4320C77D268F114400AEF27B /* AppState.swift in Sources */,
-				438C1A7F26CFA63B00DB20AD /* WatchConnector.swift in Sources */,
 				4320C76A268EF2AB00AEF27B /* GpAttendanceWidget.intentdefinition in Sources */,
 				438C1A4526CF9A0900DB20AD /* WorkingTimeView.swift in Sources */,
 				4320C77B268F095C00AEF27B /* SettingView.swift in Sources */,
@@ -602,10 +603,11 @@
 				438C1A7B26CFA0FD00DB20AD /* UserDefaults+PropertyWrapper.swift in Sources */,
 				438C1A5F26CF9EEC00DB20AD /* ContentView.swift in Sources */,
 				438C1A6526CF9EEC00DB20AD /* ComplicationController.swift in Sources */,
-				435BB0AE26E1FBB5001B3261 /* PhoneConnector.swift in Sources */,
+				43075FF12791640D00E6CB52 /* CloudKitManager.swift in Sources */,
 				438C1A5D26CF9EEC00DB20AD /* GpAttendanceApp.swift in Sources */,
 				438C1A6326CF9EEC00DB20AD /* NotificationView.swift in Sources */,
 				435BB0B126E20FB0001B3261 /* AppStateEntity.swift in Sources */,
+				43075FF52791689300E6CB52 /* WatchState.swift in Sources */,
 				438C1A7C26CFA10200DB20AD /* Calendar+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -862,7 +864,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -887,7 +889,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};
@@ -908,7 +910,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Debug;
 		};
@@ -929,7 +931,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
 			};
 			name = Release;
 		};

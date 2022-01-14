@@ -8,33 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var phoneConnector = PhoneConnector()
-    @State private var reachable = "No"
+    @ObservedObject private var watchState = WatchState()
+
     @State var date = Date()
     @State var timer: Timer?
 
     var body: some View {
         VStack {
-            if let isArrived = phoneConnector.data?.isArrived {
-                if phoneConnector.data?.arriveUrl == nil ||
-                    phoneConnector.data?.leaveUrl == nil {
-                    Text("⚒ アプリでURLを設定してください")
-                } else if isArrived {
-                    Text("⏰ 現在の勤務時間: " + Calendar.shared.getDurationText(from: phoneConnector.data!.arriveDate!, to: date))
-                } else {
-                    Text("🏡 退勤中")
-                }
+            if watchState.arriveUrl == nil || watchState.leaveUrl == nil {
+                Text("⚒ アプリでURLを設定してください")
+            } else if watchState.isArrived {
+                Text("⏰ 現在の勤務時間: " + Calendar.shared.getDurationText(from: watchState.arriveDate!, to: date))
             } else {
-                Text("⚒ アプリを開いてください")
-                Button(action: {
-                    reachable = phoneConnector.isReachable ? "Yes" : "No"
-                }, label: {
-                    Text("Fetch \(reachable)")
-                })
+                Text("🏡 退勤中")
             }
         }
         .onAppear {
-            reachable = phoneConnector.isReachable ? "Yes" : "No"
             self.timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
                 self.date = Date()
             }
@@ -42,6 +31,15 @@ struct ContentView: View {
         .onDisappear {
             self.timer?.invalidate()
             self.timer = nil
+        }
+        .onReceive(NotificationCenter.default.publisher(for: CloudKitManager.ckUpdateNotification)) { _ in
+            Task {
+                do {
+                    try await watchState.fetchLatest()
+                } catch {
+                    print("fetch error: \(error)")
+                }
+            }
         }
     }
 }
