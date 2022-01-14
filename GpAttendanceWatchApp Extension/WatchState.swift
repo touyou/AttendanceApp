@@ -15,11 +15,16 @@ final class WatchState: ObservableObject {
     @Published var leaveUrl: URL?
     @Published var isArrived: Bool = false
     @Published var arriveDate: Date?
+    @Published var isLoading: Bool = false
 
     init() {
+        isLoading = true
         Task {
             do {
                 try await fetchLatest()
+                await MainActor.run {
+                    isLoading = false
+                }
             } catch {
                 print("initialize error: \(error)")
             }

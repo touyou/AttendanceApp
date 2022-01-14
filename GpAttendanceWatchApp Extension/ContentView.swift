@@ -15,10 +15,22 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            if watchState.arriveUrl == nil || watchState.leaveUrl == nil {
+            if watchState.isLoading {
+                Text("⏳ 情報取得中...")
+            } else if watchState.arriveUrl == nil || watchState.leaveUrl == nil {
                 Text("⚒ アプリでURLを設定してください")
             } else if watchState.isArrived {
                 Text("⏰ 現在の勤務時間: " + Calendar.shared.getDurationText(from: watchState.arriveDate!, to: date))
+                Button("退社 🏠") {
+                    URLSession.shared.dataTask(with: watchState.leaveUrl!) { _, _, error in
+                        DispatchQueue.main.async {
+                            if let _ = error {
+                            } else {
+                                watchState.toggleArrived()
+                            }
+                        }
+                    }.resume()
+                }
             } else {
                 Text("🏡 退勤中")
             }

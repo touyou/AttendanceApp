@@ -388,11 +388,11 @@
 				438C1A6026CF9EEC00DB20AD /* NotificationController.swift */,
 				438C1A6226CF9EEC00DB20AD /* NotificationView.swift */,
 				438C1A6426CF9EEC00DB20AD /* ComplicationController.swift */,
+				43075FF42791689300E6CB52 /* WatchState.swift */,
 				438C1A6626CF9EEE00DB20AD /* Assets.xcassets */,
 				438C1A6B26CF9EEE00DB20AD /* Info.plist */,
 				438C1A6C26CF9EEE00DB20AD /* PushNotificationPayload.apns */,
 				438C1A6826CF9EEE00DB20AD /* Preview Content */,
-				43075FF42791689300E6CB52 /* WatchState.swift */,
 			);
 			path = "GpAttendanceWatchApp Extension";
 			sourceTree = "<group>";
