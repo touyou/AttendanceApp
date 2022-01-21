@@ -24,7 +24,9 @@ struct MainView: View {
                     }
                 
                 VStack {
-                    if appState.arriveUrl == nil || appState.leaveUrl == nil {
+                    if appState.isLoading {
+                        Text("⏳ 情報取得中...")
+                    } else if appState.arriveUrl == nil || appState.leaveUrl == nil {
                         ShouldSetURLView()
                     } else if appState.isArrived {
                         WorkingTimeView(showingAlert: $showingAlert)
@@ -45,9 +47,13 @@ struct MainView: View {
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: CloudKitManager.ckUpdateNotification)) { _ in
+            appState.isLoading = true
             Task {
                 do {
                     try await appState.fetchLatest()
+                    await MainActor.run {
+                        appState.isLoading = false
+                    }
                 } catch {
                     print("fetch error: \(error)")
                 }

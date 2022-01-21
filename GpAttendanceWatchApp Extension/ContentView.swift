@@ -33,6 +33,17 @@ struct ContentView: View {
                 }
             } else {
                 Text("🏡 退勤中")
+                Button("出社 🏢") {
+                    URLSession.shared.dataTask(with: watchState.arriveUrl!) { _, _, error  in
+                        DispatchQueue.main.async {
+                            if let _ = error {
+                            } else {
+                                watchState.toggleArrived()
+                                watchState.setArriveDate(Date())
+                            }
+                        }
+                    }.resume()
+                }
             }
         }
         .onAppear {
@@ -45,9 +56,13 @@ struct ContentView: View {
             self.timer = nil
         }
         .onReceive(NotificationCenter.default.publisher(for: CloudKitManager.ckUpdateNotification)) { _ in
+            watchState.isLoading = true
             Task {
                 do {
                     try await watchState.fetchLatest()
+                    await MainActor.run {
+                        watchState.isLoading = false
+                    }
                 } catch {
                     print("fetch error: \(error)")
                 }
